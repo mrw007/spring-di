@@ -2,6 +2,7 @@ package mrw007.springframework.springdi;
 
 import mrw007.springframework.springdi.controllers.*;
 import mrw007.springframework.springdi.examplebeans.FakeDataSource;
+import mrw007.springframework.springdi.examplebeans.FakeJmsBroker;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -33,6 +34,9 @@ public class SpringDiApplication {
 
         FakeDataSource fakeDataSource = (FakeDataSource) ctx.getBean(FakeDataSource.class);
         System.out.println(fakeDataSource.getUser());
+
+        FakeJmsBroker fakeJmsBroker = (FakeJmsBroker) ctx.getBean(FakeJmsBroker.class);
+        System.out.println(fakeJmsBroker.getUsername());
     }
 
 }
